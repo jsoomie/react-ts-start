@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { List } from ".";
 
-interface PeopleState {
+interface iState {
   people: {
     id: number;
     name: string;
@@ -11,11 +12,11 @@ interface PeopleState {
 }
 
 export default function Stage() {
-  const [people, setPeople] = useState<PeopleState["people"]>([]);
+  const [people, setPeople] = useState<iState["people"]>([]);
 
   return (
     <div>
-      <h1>This is the stage, hello</h1>
+      <List people={people} />
     </div>
   );
 }
