@@ -9,11 +9,20 @@ interface iProps {
 }
 
 export const List: React.FC<iProps> = ({ people }) => {
-  return (
-    <div>
-      <p>LIst</p>
-    </div>
-  );
+  const renderList = (): JSX.Element[] => {
+    return people.map((person) => (
+      <li key={person.name} className="ListItem">
+        <div className="ListHeader">
+          <img className="ListImg" src={person.url} alt={person.name} />
+          <h2>{person.name}</h2>
+          <p>{person.age} years old</p>
+          <p className="ListNote">{person.note}</p>
+        </div>
+      </li>
+    ));
+  };
+
+  return <ul className="ListContainer">{renderList()}</ul>;
 };
 
 export default List;
