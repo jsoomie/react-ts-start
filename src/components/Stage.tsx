@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { List, AddToList } from ".";
+import { v4 as uuid } from "uuid";
 
-interface iState {
+export interface iState {
   people: {
-    id: number;
+    id: string;
     name: string;
     age: number;
     url: string;
@@ -14,32 +15,32 @@ interface iState {
 export default function Stage() {
   const [people, setPeople] = useState<iState["people"]>([
     {
-      id: 1,
+      id: uuid(),
       name: "Link",
       age: 18,
       url: "https://media.braceletbookcdn.com/users/000/000/009/076/000000009076/image.jpg",
       note: "How old is Link? How many Links are there?",
     },
     {
-      id: 2,
+      id: uuid(),
       name: "Princess Peach",
       age: 24,
       url: "https://pbs.twimg.com/profile_images/1385693111494512642/ApWJ34St_400x400.jpg",
       note: "Playing tennis if not being saved.",
     },
     {
-      id: 3,
-      name: "Samus Aran",
-      age: 34,
-      url: "https://images6.fanpop.com/image/photos/37400000/Samus-Aran-metroid-37441500-200-200.jpg",
-      note: "Where's my suit? I can't breathe without my suit! Wait... Oh yes I can!.",
+      id: uuid(),
+      name: "Min Min",
+      age: 18,
+      url: "https://c.tenor.com/KU93e3eEpcwAAAAC/min-min-arms.gif",
+      note: "Min Min has ribbon arms!",
     },
   ]);
 
   return (
     <div>
       <List people={people} />
-      <AddToList />
+      <AddToList people={people} setPeople={setPeople} />
     </div>
   );
 }

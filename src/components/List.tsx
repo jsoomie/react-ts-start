@@ -1,12 +1,4 @@
-interface iProps {
-  people: {
-    id: number;
-    name: string;
-    age: number;
-    url: string;
-    note?: string;
-  }[];
-}
+import { iState as iProps } from "./Stage";
 
 export const List: React.FC<iProps> = ({ people }) => {
   const renderList = (): JSX.Element[] => {

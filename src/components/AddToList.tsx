@@ -1,9 +1,15 @@
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
+import { iState as Props } from "./Stage";
 
-export const AddToList = () => {
+interface iProps {
+  people: Props["people"];
+  setPeople: React.Dispatch<React.SetStateAction<Props["people"]>>;
+}
+
+export const AddToList: React.FC<iProps> = ({ people, setPeople }) => {
   const [input, setInput] = useState({
-    id: uuid(),
+    id: "",
     name: "",
     age: "",
     img: "",
@@ -20,7 +26,25 @@ export const AddToList = () => {
   };
 
   const handleClick = (): void => {
-    console.log("clicked");
+    if (!input.name || !input.age || !input.img) return;
+    setPeople([
+      ...people,
+      {
+        id: uuid(),
+        name: input.name,
+        age: parseInt(input.age),
+        url: input.img,
+        note: input.note,
+      },
+    ]);
+
+    setInput({
+      id: "",
+      name: "",
+      age: "",
+      img: "",
+      note: "",
+    });
   };
 
   return (
@@ -35,7 +59,7 @@ export const AddToList = () => {
         name="name"
       />
       <input
-        type="text"
+        type="number"
         placeholder="Age"
         className="AddInput"
         value={input.age}
