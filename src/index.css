@@ -33,18 +33,34 @@ li {
   max-width: 800px;
   margin: 0 auto;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0.4rem;
   align-items: center;
 }
 
 .ListHeader {
   display: flex;
-  width: 20%;
-  justify-content: space-between;
+  width: 12%;
+  justify-content: center;
   align-items: center;
 }
 
 .ListImg {
   width: 90px;
+  height: 90px;
   border-radius: 90px;
+}
+
+.ListName {
+  width: 25%;
+  text-align: left;
+  padding-left: 1rem;
+}
+
+.ListAge {
+  width: 25%
+}
+
+.ListNote {
+  width: 38%;
+  text-align: left;
 }
