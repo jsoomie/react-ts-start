@@ -18,14 +18,14 @@ export default function Stage() {
       id: uuid(),
       name: "Link",
       age: 18,
-      url: "https://media.braceletbookcdn.com/users/000/000/009/076/000000009076/image.jpg",
+      url: "https://i.imgur.com/RdVQSC1.gif",
       note: "How old is Link? How many Links are there?",
     },
     {
       id: uuid(),
       name: "Princess Peach",
       age: 24,
-      url: "https://pbs.twimg.com/profile_images/1385693111494512642/ApWJ34St_400x400.jpg",
+      url: "https://i.pinimg.com/originals/4a/ee/44/4aee448af8872fec078e61a3ac58c48d.gif",
       note: "Playing tennis if not being saved.",
     },
     {
