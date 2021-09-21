@@ -15,9 +15,9 @@ export const List: React.FC<iProps> = ({ people }) => {
         <div className="ListHeader">
           <img className="ListImg" src={person.url} alt={person.name} />
           <h2>{person.name}</h2>
-          <p>{person.age} years old</p>
-          <p className="ListNote">{person.note}</p>
         </div>
+        <p>{person.age} years old</p>
+        <p className="ListNote">{person.note}</p>
       </li>
     ));
   };
