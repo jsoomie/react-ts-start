@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { List } from ".";
+import { List, AddToList } from ".";
 
 interface iState {
   people: {
@@ -39,6 +39,7 @@ export default function Stage() {
   return (
     <div>
       <List people={people} />
+      <AddToList />
     </div>
   );
 }
