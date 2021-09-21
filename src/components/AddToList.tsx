@@ -7,16 +7,58 @@ export const AddToList = () => {
     name: "",
     age: "",
     img: "",
+    note: "",
   });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ): void => {
+    setInput({
+      ...input,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleClick = (): void => {
+    console.log("clicked");
+  };
 
   return (
     <div className="AddContainer">
       <h2>Add to The List</h2>
-      <input type="text" placeholder="Name" className="AddInput" />
-      <input type="text" placeholder="Age" className="AddInput" />
-      <input type="text" placeholder="Image Url" className="AddInput" />
-      <textarea placeholder="Notes" className="AddInput" rows={6} />
-      <button>Add To The List</button>
+      <input
+        type="text"
+        placeholder="Name"
+        className="AddInput"
+        value={input.name}
+        onChange={handleChange}
+        name="name"
+      />
+      <input
+        type="text"
+        placeholder="Age"
+        className="AddInput"
+        value={input.age}
+        onChange={handleChange}
+        name="age"
+      />
+      <input
+        type="text"
+        placeholder="Image Url"
+        className="AddInput"
+        value={input.img}
+        onChange={handleChange}
+        name="img"
+      />
+      <textarea
+        placeholder="Notes"
+        className="AddInput"
+        rows={6}
+        value={input.note}
+        onChange={handleChange}
+        name="note"
+      />
+      <button onClick={handleClick}>Add To The List</button>
     </div>
   );
 };
