@@ -47,9 +47,10 @@ li {
 }
 
 .ListImg {
+  object-fit: cover;
+  border-radius:50%;
   width: 90px;
   height: 90px;
-  border-radius: 90px;
 }
 
 .ListName {

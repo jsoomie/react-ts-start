@@ -18,7 +18,7 @@ export default function Stage() {
       id: uuid(),
       name: "Link",
       age: 18,
-      url: "https://i.imgur.com/RdVQSC1.gif",
+      url: "https://c.tenor.com/VNQFhH8IIFQAAAAM/link-thumbs-up.gif",
       note: "How old is Link? How many Links are there?",
     },
     {
